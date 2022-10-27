@@ -7,8 +7,7 @@
 #conteudo-principal {
   width: 800px;
   height: 250px;
-  border: 2px solid rgb(18, 66, 19);
-  border-bottom: 15px solid rgb(35, 160, 35);
+  border: 2px solid #000;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -149,6 +148,15 @@ svg {
   animation: block 20s infinite linear;
 }
 
+#cenario {
+  background: rgba(35, 160, 35);
+  width: 500%;
+  height: 50px;
+  top: 220px;
+  position: absolute;
+  color: rgba(35, 160, 35);
+}
+
 @media(max-width: 1200px) {
   #conteudo-principal {
     width: 700px;
@@ -185,6 +193,7 @@ svg {
 }
 
 @media(max-height: 510px) {
+
   #cabecalho,
   footer,
   p {
