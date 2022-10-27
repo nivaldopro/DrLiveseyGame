@@ -6,18 +6,26 @@ let alreadyJump = false
 
 const pulo = new Audio()
 pulo.src = 'pulo.mp3'
-pulo.volume = 0.09
+pulo.volume = 0.5
 pulo.pause()
 
 const music = new Audio()
 music.src = 'Dr.Livesey.music.mp3'
 music.play()
+music.volume = 0.05
 
 const dead = new Audio()
 dead.src = 'dead.song.mp3'
 
+const touch = addEventListener("touchstart", (e) => {
+  if (e.changedTouches) {
+    jump()
+    pulo.play()
+  }
+})
+
 const control = addEventListener("keydown", (e) => {
-  if ((e.code === 'Space') || (e.code === "ArrowUp")) {
+  if ((e.code === 'Space') || (e.code === "ArrowUp") || (touch = e.changedTouches)) {
     jump()
     pulo.play()
   }
@@ -36,7 +44,6 @@ function jump() {
 }
 
 const loop = setInterval(() => {
-
   const inimigoPosition = inimigo.offsetLeft;
   const drLivese = +window.getComputedStyle(drLivesey).bottom.replace('px', '')
   if (inimigoPosition <= 100 && inimigoPosition > 0 && drLivese < 60) {
@@ -65,7 +72,6 @@ let countSong = new Audio()
 countSong.src = 'count.song.mp3'
 
 this.counter = setInterval(function () {
-
   if (count <= 200) {
     count++
     test.innerHTML = `${count}`
