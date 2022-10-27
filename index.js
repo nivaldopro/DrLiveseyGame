@@ -25,7 +25,7 @@ const touch = addEventListener("touchstart", (e) => {
 })
 
 const control = addEventListener("keydown", (e) => {
-  if ((e.code === 'Space') || (e.code === "ArrowUp") || (touch = e.changedTouches)) {
+  if ((e.code === 'Space') || (e.code === "ArrowUp")) {
     jump()
     pulo.play()
   }
