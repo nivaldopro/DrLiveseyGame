@@ -46,7 +46,7 @@ function jump() {
 const loop = setInterval(() => {
   const inimigoPosition = inimigo.offsetLeft;
   const drLivese = +window.getComputedStyle(drLivesey).bottom.replace('px', '')
-  if (inimigoPosition <= 100 && inimigoPosition > 0 && drLivese < 60) {
+  if (inimigoPosition <= 100 && inimigoPosition > 20 && drLivese < 60) {
     inimigo.style.animation = 'none'
     inimigo.style.left = `${inimigoPosition}px`
     drLivesey.style.animation = 'none'
@@ -82,6 +82,11 @@ this.counter = setInterval(function () {
   } else if (count >= 1000 && count <= 1000) {
     demais.play()
   }
+
+  if (maxCount < count) {
+    maxCount = count
+  } 
+  best.innerHTML = `${count}`
 }, 1000)
 
 this.counter2 = setInterval(function () {
